@@ -1,18 +1,29 @@
-# React + Vite
+# React Internship Tasks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Virtual DOM and Stamina Updates
 
-Currently, two official plugins are available:
+React uses the Virtual DOM to efficiently update only the parts of the UI that change.  
+When the stamina state updates, React compares the new Virtual DOM with the previous one and re-renders only the stamina-related elements instead of refreshing the whole page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Modulus Logic for the 5th-Click Bug
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```js
+if (newClickCount % 5 === 0) {
+  reduction = 15
+}
+```
 
-Note: This will impact Vite dev & build performances.
+This logic checks whether the click count is divisible by 5.  
+Every 5th click triggers the critical bug and reduces stamina by 15.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Differences Between Vite and Create React App (CRA)
+
+| Vite | Create React App |
+|------|------------------|
+| Faster development server | Slower startup time |
+| Uses native ES modules | Uses Webpack bundling |
+| Lightweight and modern | Larger and older setup |
